@@ -48,6 +48,10 @@ make
 cd ..
 chmod +x run_deepcna.sh ./callcna/run_callcna.sh ./callcna/callcna
 ```
+If above version of PyTorch does not match the CUDA version, 
+you can find version dependence between PyTorch and CUDA at https://pytorch.org/get-started/previous-versions/, 
+and select appropriate PyTorch version to install on your machine.
+
 After the installation completes, you can reset the compiler using same commands:
 ```bash
 sudo update-alternatives --config gcc
