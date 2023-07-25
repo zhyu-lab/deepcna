@@ -66,7 +66,7 @@ class GenomeData:
         chroms = set(chroms) & set(range(1, 23))
         chroms = list(chroms)
         tv1 = [1 if self.data_chr_all[i] in chroms else 0 for i in range(len(self.data_chr_all))]
-        tv2 = self.data_gc_all > 0.1
+        tv2 = np.logical_and(self.data_gc_all > 0.1, self.data_gc_all < 0.9)
         tv3 = self.data_map_all < 0.9
         tv = np.logical_and(tv1, tv2)
         tv = np.logical_and(tv, tv3)

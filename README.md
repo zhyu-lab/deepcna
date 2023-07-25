@@ -26,15 +26,33 @@ conda activate deepcna
 ```
 
 ## Install requirements
+To successfully compile the source code, please make sure g++-5 is installed on your machine.
+you can install it using following commands:
+```bash
+sudo apt install gcc-5 g++-5
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 20  
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 20
+```
+If your current compiler is not g++-5, you need to change the current compiler to gcc-5 and g++-5:
+```bash
+sudo update-alternatives --config gcc
+sudo update-alternatives --config g++
+```
+Then install related packages and compile the code:
 ```bash
 python -m pip install -r ./detectbp/requirements.txt
+pip install torch==1.10.1+cu111 torchvision==0.11.2+cu111 torchaudio==0.10.1 -f https://download.pytorch.org/whl/cu111/torch_stable.html
 cd prep
 cmake .
 make
 cd ..
 chmod +x run_deepcna.sh ./callcna/run_callcna.sh ./callcna/callcna
 ```
-
+After the installation completes, you can reset the compiler using same commands:
+```bash
+sudo update-alternatives --config gcc
+sudo update-alternatives --config g++
+```
 # Usage
 
 ## Step 1: prepare input data

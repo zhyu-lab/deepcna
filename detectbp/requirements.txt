@@ -10,7 +10,4 @@ PySocks==1.7.1
 python-dateutil==2.8.2
 scikit-learn==1.1.2
 scipy==1.9.3
-torch==1.12.1
-torchaudio==0.12.1
-torchvision==0.13.1
 typing_extensions==4.4.0
